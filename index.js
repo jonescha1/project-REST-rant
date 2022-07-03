@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 8000; // Port variable that is retrieved from t
 app.set("views", __dirname + "/views");
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
+app.use(express.static("public"));
 
 // THIS IS THE HOME/ROOT ROUTE
 app.get("/", (req, res) => {
