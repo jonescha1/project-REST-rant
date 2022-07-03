@@ -2,11 +2,14 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
-app.use("/places", require("./src/controllers/places"));
+app.set("view engine", "jsx");
+app.engine("jsx", require("express-react-views").createEngine());
+
+app.use("/places", require("./controllers/places"));
 
 // This is the home/root route.
 app.get("/", (req, res) => {
-  res.send("Hello world!");
+  res.render("home");
 });
 
 // This is the 404 wildcard route. If the user types in a route that does not exist, it will return this.
