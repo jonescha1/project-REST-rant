@@ -1,15 +1,14 @@
 const React = require("react");
 const Def = require("./default");
 
-function home() {
+function home({ title }) {
   return (
-    <Def>
-      <main>
-        <h1>Home Page</h1>
-        <a href="/places">
-          <button className="btn-primary">Places Page</button>
-        </a>
-      </main>
+    <Def title={title}>
+      <div id="banner">
+        <img src="./images/alex-haney-CAhjZmVk5H4-unsplash.jpg" alt="" />
+      </div>
+      <h1>Home Page</h1>
+      <main></main>
     </Def>
   );
 }
