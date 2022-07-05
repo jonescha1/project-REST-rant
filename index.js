@@ -15,7 +15,7 @@ app.use(express.static("public"));
 
 // THIS IS THE HOME/ROOT ROUTE
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render("home", { title: "Home" });
 });
 
 // PLACES ROUTE
