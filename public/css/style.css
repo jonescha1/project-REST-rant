@@ -1,10 +1,63 @@
-body {
-  background-color: #f1f1f1;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+:root {
+  --primary-color: #f1f1f1;
+  --primary-color-highlight: black;
+  --bs-body-bg: #fbf9f6;
+  --bs-body-font-family: "Montserrat", sans-serif;
 }
 
-#banner img {
+body {
+  height: 100vh;
   width: 100%;
-  height: 500px;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  background-color: black;
+}
+
+/* This is an overlay for the background image  */
+main .overlay {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* STYLING FOR THE HOME PAGE */
+main .overlay .banner {
+  color: var(--primary-color);
+
+  margin-top: 300px;
+  max-width: 500px;
+}
+main .overlay .banner h2 {
+  font-weight: 700;
+}
+
+main img {
+  height: 100%;
+  width: 100%;
   object-fit: cover;
-  object-position: left 20%;
+}
+
+/* This is to give credit to the image owner. It will be located at the bottom right of each image. */
+#photo-credits {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.5rem;
 }
