@@ -8,7 +8,7 @@ function error404() {
         <h1>404: PAGE NOT FOUND</h1>
         <h4>Oops, sorry, we are unable to find this page!</h4>
         <div className="page-image">
-          <img src="./images/cookie-the-pom-gySMaocSdqs-unsplash.jpg" alt="" />
+          <img src="../images/cookie-the-pom-gySMaocSdqs-unsplash.jpg" alt="" />
           <div>
             Photo by{" "}
             <a href="https://unsplash.com/@cookiethepom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
