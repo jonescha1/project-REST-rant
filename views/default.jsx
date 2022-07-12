@@ -4,8 +4,8 @@ function Def(html) {
   return (
     <html>
       <head>
-        <meta charset="UTF-8"></meta>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta charSet="UTF-8"></meta>
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge"></meta>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0"
@@ -16,7 +16,7 @@ function Def(html) {
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         ></link>
 
         <link rel="stylesheet" href="/css/style.css"></link>
@@ -29,13 +29,13 @@ function Def(html) {
 
       <body>
         <header>
-          <nav class="navbar navbar-dark navbar-expand-lg">
-            <div class="container">
-              <a class="navbar-brand fw-bold" href="#">
+          <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
+            <div className="container-fluid">
+              <a className="navbar-brand fw-bold" href="#">
                 REST-rant
               </a>
               <button
-                class="navbar-toggler"
+                className="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarNav"
@@ -43,26 +43,21 @@ function Def(html) {
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span class="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon"></span>
               </button>
               <div
-                class="collapse navbar-collapse justify-content-end"
+                className="collapse navbar-collapse justify-content-end"
                 id="navbarNav"
               >
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">
+                <ul className="navbar-nav">
+                  <li className="nav-item">
+                    <a className="nav-link" aria-current="page" href="/">
                       Home
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/places">
+                  <li className="nav-item">
+                    <a className="nav-link" href="/places">
                       Places
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      Pricing
                     </a>
                   </li>
                 </ul>
@@ -73,12 +68,10 @@ function Def(html) {
 
         {html.children}
 
-        <footer></footer>
-
         <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         ></script>
       </body>
     </html>
