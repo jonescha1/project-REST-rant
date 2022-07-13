@@ -60,6 +60,11 @@ function Def(html) {
                       Places
                     </a>
                   </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/places/new">
+                      Add Place
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
