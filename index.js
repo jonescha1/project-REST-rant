@@ -1,7 +1,7 @@
 // DEPENDENCIES
 const express = require("express");
 const chalk = require("chalk"); //Chalk is just used to configure the console output color. In order to use in this app, we have to install version 4.1.2 of chalk.
-
+const methodOverride = require("method-override");
 // CONFIGURATION
 require("dotenv").config();
 const app = express();
@@ -13,6 +13,7 @@ app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 // THIS IS THE HOME/ROOT ROUTE
 app.get("/", (req, res) => {
