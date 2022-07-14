@@ -20,9 +20,11 @@ function Index(data) {
   });
   return (
     <Def>
-      <main>
-        <h1>Places to Rant or Rave about</h1>
-        <div className="grid-layout">{placesFormatted}</div>
+      <main className="container-fluid">
+        <div className="index-page-container">
+          <h1>Places to Rant or Rave about</h1>
+          <div className="index-flex">{placesFormatted}</div>
+        </div>
       </main>
     </Def>
   );
