@@ -20,15 +20,20 @@ function show(data) {
                   {data.place.cuisines}
                 </p>
               </div>
-              <a href={`/places/${data.id}/edit`} className="btn btn-warning">
-                Edit
-              </a>
+              <div className="btn-container">
+                <a href={`/places/${data.id}/edit`} className="btn btn-lg">
+                  <i class="bi bi-pencil-square"></i>
+                </a>
 
-              <form method="POST" action={`/places/${data.id}?_method=DELETE`}>
-                <button type="submit" className="btn btn-danger">
-                  Delete
-                </button>
-              </form>
+                <form
+                  method="POST"
+                  action={`/places/${data.id}?_method=DELETE`}
+                >
+                  <button type="submit" className="btn btn-lg">
+                    <i class="bi bi-trash3"></i>
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
 
