@@ -7,7 +7,12 @@ function show(data) {
       <main className="container-fluid">
         <div className="show-page-container">
           <div className="show-top">
-            <img src={data.place.pic} alt="Default picture of restaurant" />
+            <div>
+              <img src={data.place.pic} alt="Default picture of restaurant" />
+              <p>
+                Located in {data.place.city}, {data.place.state}
+              </p>
+            </div>
             <div className="text">
               <div>
                 <h2>{data.place.name}</h2>
@@ -15,10 +20,8 @@ function show(data) {
               </div>
               <div>
                 <h2>Description</h2>
-                <p>
-                  Located in {data.place.city}, {data.place.state} and serving{" "}
-                  {data.place.cuisines}
-                </p>
+                <h4>{data.place.showEstablished()}</h4>
+                <p>Serving {data.place.cuisines}</p>
               </div>
               <div className="btn-container">
                 <a href={`/places/${data.id}/edit`} className="btn btn-lg">
