@@ -22,14 +22,24 @@ function show(data) {
   if (data.place.comments.length) {
     comments = data.place.comments.map((c) => {
       return (
-        <div className="container-comment">
+        <div className="comment-container">
           <div>
             <h3>-{c.author}</h3>
             <h2 className="rant">{c.rant ? "Rant! " : "Rave! "}</h2>
-            <h4>{c.content}</h4>
+            <p>{c.content}</p>
           </div>
-          <div>
-            <h4 className="rating">Rating: {c.stars}</h4>
+          <div className="right">
+            <h5>Rating: {c.stars}</h5>
+            <form
+              method="POST"
+              action={`/places/${data.place.id}/comment/${c.id}?_method=DELETE`}
+            >
+              <input
+                type="submit"
+                className="btn btn-danger"
+                value="Delete Comment"
+              />
+            </form>
           </div>
         </div>
       );
@@ -89,13 +99,16 @@ function show(data) {
                 <p>Serving {data.place.cuisines}</p>
               </div>
               <div className="btn-container">
-                <a href={`/places/${data.id}/edit`} className="btn btn-lg">
+                <a
+                  href={`/places/${data.place.id}/edit`}
+                  className="btn btn-lg"
+                >
                   <i className="bi bi-pencil-square"></i>
                 </a>
 
                 <form
                   method="POST"
-                  action={`/places/${data.id}?_method=DELETE`}
+                  action={`/places/${data.place.id}?_method=DELETE`}
                 >
                   <button type="submit" className="btn btn-lg">
                     <i className="bi bi-trash3"></i>
@@ -106,10 +119,10 @@ function show(data) {
           </div>
 
           <div className="show-bottom">
-            <h2 className="comments-title">Comments</h2>
+            <h2>Comments</h2>
             <div className="content">
-              <div className="comments">{comments}</div>
-              <div className="comments-form">{commentform}</div>
+              <div className="comments-container">{comments}</div>
+              <div className="comments-form-container">{commentform}</div>
             </div>
           </div>
         </div>

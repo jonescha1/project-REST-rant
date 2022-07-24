@@ -108,66 +108,70 @@ body {
   display: flex;
 }
 
+/* *********************************************************************** */
+/* *********************************************************************** */
+/* *********************************************************************** */
+/* *********************************************************************** */
+
 .show-bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* background-color: blue; */
+}
+
+.show-bottom > h2 {
+  font-weight: 700;
+  margin-top: 20px;
+  /* background-color: red; */
 }
 
 .show-bottom .content {
+  /* background-color: pink; */
   display: flex;
   width: 100%;
-}
-.show-bottom .comments {
-  flex-grow: 1;
-  margin-right: 40px;
-  height: 100%;
+  /* justify-content: space-between; */
+  padding: 10px;
 }
 
-.show-bottom form {
-  min-width: 400px;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 20px;
-  background-color: #a2a7ada3;
-  display: flex;
-  flex-direction: column;
+.content .comments-container {
+  /* background-color: green; */
+  flex: 3 0 0;
 }
 
-.show-bottom form .btn {
-  margin-top: 10px;
+.content .comments-form-container {
+  /* background-color: red; */
+  flex: 1 0 0;
 }
-
-.show-bottom .comments-title {
-  font-weight: 600;
-  margin-top: 20px;
-}
-
-.show-bottom .container-comment {
+.content .comment-container {
+  border-radius: 3px;
   display: flex;
   justify-content: space-between;
-  padding: 7px;
-  margin: 10px 0 10px 0;
+  padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-.show-bottom .container-comment h3 {
-  color: var(--primary-color-text);
-  font-size: 1.2rem;
+.content .comment-container h2 {
+  font-weight: 700;
 }
 
-.show-bottom .container-comment .rant {
-  color: var(--primary-color-text);
-  font-weight: 400;
-  font-weight: bold;
+.content .comment-container .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.show-bottom .container-comment .rating {
-  color: var(--primary-color-text);
+
+.content .comments-form-container form {
+  margin: 0 15px 0 15px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
-.show-bottom .container-comment h4 {
-  color: var(--secondary-color-text);
-  font-size: 1rem;
-}
+
+/* *********************************************************************** */
+/* *********************************************************************** */
+/* *********************************************************************** */
+/* *********************************************************************** */
 
 /* 404 page styling */
 .error-page-container h1,
@@ -187,12 +191,11 @@ body {
   text-align: center;
 }
 
-@media only screen and (max-width: 1078px) {
+@media only screen and (max-width: 750px) {
   .show-bottom .content {
     flex-direction: column;
-    align-items: center;
   }
-  .show-bottom .comments {
-    margin-right: 0px;
+  .content .comments-form-container form {
+    margin: 10px 0 10px 0;
   }
 }
