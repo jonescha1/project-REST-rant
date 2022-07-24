@@ -4,6 +4,21 @@ const Def = require("../default");
 function show(data) {
   let comments = <h4>No comments yet!</h4>;
 
+  let rating = <p>Not yet rated!</p>;
+
+  if (data.place.comments.length) {
+    let sumRatings = data.place.comments.reduce((tot, c) => {
+      return tot + c.stars;
+    }, 0);
+    let averageRating = Math.round(sumRatings / data.place.comments.length);
+    let stars = "";
+    for (let i = 0; i < averageRating; i++) {
+      stars += "⭐️";
+    }
+
+    rating = <p>{stars} stars</p>;
+  }
+
   if (data.place.comments.length) {
     comments = data.place.comments.map((c) => {
       return (
@@ -66,6 +81,7 @@ function show(data) {
               <div>
                 <h2>{data.place.name}</h2>
                 <h4>Rating</h4>
+                {rating}
               </div>
               <div>
                 <h2>Description</h2>
