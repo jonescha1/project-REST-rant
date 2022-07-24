@@ -82,13 +82,12 @@ body {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
+  height: 100%;
 }
 
 .show-top {
   display: flex;
   flex-wrap: wrap;
-
   justify-content: space-around;
   border-bottom: solid rgba(0, 0, 0, 0.35);
   padding-bottom: 10px;
@@ -115,6 +114,30 @@ body {
   align-items: center;
 }
 
+.show-bottom .content {
+  display: flex;
+  width: 100%;
+}
+.show-bottom .comments {
+  flex-grow: 1;
+  margin-right: 40px;
+  height: 100%;
+}
+
+.show-bottom form {
+  min-width: 400px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+  background-color: #a2a7ada3;
+  display: flex;
+  flex-direction: column;
+}
+
+.show-bottom form .btn {
+  margin-top: 10px;
+}
+
 .show-bottom .comments-title {
   font-weight: 600;
   margin-top: 20px;
@@ -122,11 +145,9 @@ body {
 
 .show-bottom .container-comment {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  width: 100%;
   padding: 7px;
-  margin: 20px 0 20px 0;
+  margin: 10px 0 10px 0;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
@@ -164,4 +185,14 @@ body {
 
 .error-image-container div {
   text-align: center;
+}
+
+@media only screen and (max-width: 1078px) {
+  .show-bottom .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .show-bottom .comments {
+    margin-right: 0px;
+  }
 }

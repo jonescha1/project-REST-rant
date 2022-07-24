@@ -21,6 +21,36 @@ function show(data) {
     });
   }
 
+  let commentform = (
+    <form method="POST" action={`/places/${data.place.id}/comment`}>
+      <div className="form-group">
+        <label htmlFor="author">Name</label>
+        <input className="form-control" id="author" name="author" required />
+      </div>
+      <div className="form-group">
+        <label htmlFor="content">Comment</label>
+        <input className="form-control" id="content" name="content" />
+      </div>
+      <div className="form-group">
+        <label htmlFor="stars">Rate</label>
+        <input
+          className="form-control"
+          id="stars"
+          name="stars"
+          type="number"
+          step=".5"
+          min="0"
+          max="5"
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="rant">Rant</label>
+        <input className="form-check" id="rant" name="rant" type="checkbox" />
+      </div>
+      <input className="btn btn-primary" type="submit" value="Add Comment" />
+    </form>
+  );
+
   return (
     <Def>
       <main className="container-fluid">
@@ -61,7 +91,10 @@ function show(data) {
 
           <div className="show-bottom">
             <h2 className="comments-title">Comments</h2>
-            {comments}
+            <div className="content">
+              <div className="comments">{comments}</div>
+              <div className="comments-form">{commentform}</div>
+            </div>
           </div>
         </div>
       </main>

@@ -77,4 +77,25 @@ router.delete("/:id/rant/:rantId", (req, res) => {
   res.send("DELETE /places/:id/rant/:rantId stub");
 });
 
+router.post("/:id/comment", (req, res) => {
+  req.body.rant = req.body.rant ? true : false;
+  db.Place.findById(req.params.id)
+    .then((place) => {
+      console.log(req.body);
+      db.Comment.create(req.body)
+        .then((comment) => {
+          place.comments.push(comment.id);
+          place.save().then(() => {
+            res.redirect(`/places/${req.params.id}`);
+          });
+        })
+        .catch((err) => {
+          res.render("error404");
+        });
+    })
+    .catch((err) => {
+      res.render("error404");
+    });
+});
+
 module.exports = router;
