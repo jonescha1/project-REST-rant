@@ -2,6 +2,25 @@ const React = require("react");
 const Def = require("../default");
 
 function show(data) {
+  let comments = <h4>No comments yet!</h4>;
+
+  if (data.place.comments.length) {
+    comments = data.place.comments.map((c) => {
+      return (
+        <div className="container-comment">
+          <div>
+            <h3>-{c.author}</h3>
+            <h2 className="rant">{c.rant ? "Rant! " : "Rave! "}</h2>
+            <h4>{c.content}</h4>
+          </div>
+          <div>
+            <h4 className="rating">Rating: {c.stars}</h4>
+          </div>
+        </div>
+      );
+    });
+  }
+
   return (
     <Def>
       <main className="container-fluid">
@@ -41,8 +60,8 @@ function show(data) {
           </div>
 
           <div className="show-bottom">
-            <h3>Comments</h3>
-            <p>No comments yet!</p>
+            <h2 className="comments-title">Comments</h2>
+            {comments}
           </div>
         </div>
       </main>

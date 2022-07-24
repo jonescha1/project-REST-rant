@@ -2,7 +2,8 @@
 
 :root {
   --primary-color: #f0e9e9;
-  --primary-color-highlight: black;
+  --primary-color-text: rgb(20, 20, 20);
+  --secondary-color-text: rgba(48, 45, 45, 0.55);
   --bs-body-bg: #fbf9f6;
   --bs-body-font-family: "Montserrat", sans-serif;
 }
@@ -82,12 +83,12 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  padding: 20px;
 }
 
 .show-top {
   display: flex;
   flex-wrap: wrap;
+
   justify-content: space-around;
   border-bottom: solid rgba(0, 0, 0, 0.35);
   padding-bottom: 10px;
@@ -114,8 +115,37 @@ body {
   align-items: center;
 }
 
-.show-bottom h3 {
+.show-bottom .comments-title {
   font-weight: 600;
+  margin-top: 20px;
+}
+
+.show-bottom .container-comment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 7px;
+  margin: 20px 0 20px 0;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.show-bottom .container-comment h3 {
+  color: var(--primary-color-text);
+  font-size: 1.2rem;
+}
+
+.show-bottom .container-comment .rant {
+  color: var(--primary-color-text);
+  font-weight: 400;
+  font-weight: bold;
+}
+.show-bottom .container-comment .rating {
+  color: var(--primary-color-text);
+}
+.show-bottom .container-comment h4 {
+  color: var(--secondary-color-text);
+  font-size: 1rem;
 }
 
 /* 404 page styling */
