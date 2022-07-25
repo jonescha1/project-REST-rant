@@ -4,7 +4,7 @@
   "description": "This activity is a fully RESTful restaurant reviewer app.",
   "main": "node index.js",
   "scripts": {
-    "start": "index.js"
+    "start": "node index.js"
   },
   "author": "Chase Jones",
   "license": "ISC",
