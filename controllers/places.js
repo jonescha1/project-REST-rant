@@ -14,6 +14,17 @@ router.get("/", (req, res) => {
 
 // New router
 router.post("/", (req, res) => {
+  // added the if statements because mongoose schema defaults will not be set if the value is ''. It only sets default if the value is undefined.
+  if (req.body.pic == "") {
+    req.body.pic = undefined;
+  }
+  if (req.body.city == "") {
+    req.body.city = undefined;
+  }
+  if (req.body.state == "") {
+    req.body.state = undefined;
+  }
+  console.log(req.body);
   db.Place.create(req.body)
     .then(() => {
       res.redirect("/places");
@@ -46,7 +57,6 @@ router.get("/:id", (req, res) => {
   db.Place.findById(req.params.id)
     .populate("comments")
     .then((place) => {
-      console.log(place.comments);
       res.render("places/show", { place });
     })
     .catch((err) => {
@@ -108,7 +118,6 @@ router.post("/:id/comment", (req, res) => {
   req.body.rant = req.body.rant ? true : false;
   db.Place.findById(req.params.id)
     .then((place) => {
-      console.log(req.body);
       db.Comment.create(req.body)
         .then((comment) => {
           place.comments.push(comment.id);
