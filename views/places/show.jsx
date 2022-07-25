@@ -30,16 +30,18 @@ function show(data) {
           </div>
           <div className="right">
             <h5>Rating: {c.stars}</h5>
-            <form
-              method="POST"
-              action={`/places/${data.place.id}/comment/${c.id}?_method=DELETE`}
-            >
-              <input
-                type="submit"
-                className="btn btn-danger"
-                value="Delete Comment"
-              />
-            </form>
+            {
+              <form
+                method="POST"
+                action={`/places/${data.place.id}/rant/${c.id}?_method=DELETE`}
+              >
+                <input
+                  type="submit"
+                  className="btn btn-danger"
+                  value="Delete Comment"
+                />
+              </form>
+            }
           </div>
         </div>
       );

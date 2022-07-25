@@ -94,7 +94,14 @@ router.post("/:id/rant", (req, res) => {
 });
 
 router.delete("/:id/rant/:rantId", (req, res) => {
-  res.send("DELETE /places/:id/rant/:rantId stub");
+  db.Comment.findByIdAndDelete(req.params.rantId)
+    .then((place) => {
+      res.redirect(`/places/${req.params.id}`);
+    })
+    .catch((err) => {
+      console.log("err", err);
+      res.render("error404");
+    });
 });
 
 router.post("/:id/comment", (req, res) => {
