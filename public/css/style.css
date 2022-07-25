@@ -100,7 +100,7 @@ body {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .show-top {
@@ -209,5 +209,8 @@ body {
   }
   .content .comments-form-container form {
     margin: 10px 0 10px 0;
+  }
+  .show-top img {
+    max-width: 100vw;
   }
 }
