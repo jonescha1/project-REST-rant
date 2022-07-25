@@ -5,7 +5,7 @@ function home() {
   const title = "REST-Rant - A Place to rate Restaurants";
   return (
     <Def title={title}>
-      <main className="container-fluid">
+      <main>
         <div className="home-page-container">
           <h1>Home Page</h1>
           <div className="image-container">
